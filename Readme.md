@@ -5,20 +5,23 @@ In this wiki, we'll walk through the steps to set up the gstreamer-1.10 and get 
 The sample app requires a media player implementation to play MP3 files; our implementation supports GStreamer. Before building GStreamer, you need to install some utilities and dependencies.
 
 Run this command:
-
+```sh
 sudo apt-get install bison flex libglib2.0-dev libasound2-dev pulseaudio libpulse-dev
-
+```
 The following are also required to playback audio from iHeartRadio:
-
+```sh
 sudo apt-get install libfaad-dev libsoup2.4-dev libgcrypt20-dev
+```
+The following are also required if you want to play video support display:
+sudo apt-get install libxv-dev
 
 #### 1.1: Build gstreamer-1.10.4
 First, we build source directroy - `SOURCE_FOLDER`
 ```sh
 cd $SOURCE_FOLDER
-wget https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.10.4.tar.xz
-tar xf gst-plugins-base-1.10.4.tar.xz
-cd *gst-plugins-base*/
+wget https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.10.4.tar.xz
+tar xf gstreamer-1.10.4.tar.xz
+cd *gstreamer*/
 ./configure --prefix=$LOCAL_BUILD
 make -j3
 sudo make install
