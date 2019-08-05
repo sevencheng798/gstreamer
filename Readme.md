@@ -13,7 +13,9 @@ The following are also required to playback audio from iHeartRadio:
 sudo apt-get install libfaad-dev libsoup2.4-dev libgcrypt20-dev
 ```
 The following are also required if you want to play video support display:
+```sh
 sudo apt-get install libxv-dev
+```
 
 #### 1.1: Build gstreamer-1.10.4
 First, we build source directroy - `SOURCE_FOLDER`
